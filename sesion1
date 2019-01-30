@@ -1,5 +1,6 @@
 // sesion 1 29.01.19
 // SynthDef y Pdef
+
 // Prender servidor (scsynth)
 s.boot
 

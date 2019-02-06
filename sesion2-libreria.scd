@@ -55,11 +55,24 @@ SynthDef(\saw, {arg freq=440, amp=0.3, pan=0, at=0.1, rel=0.5, out=0;
 SynthDef(\wn, {arg amp=0.3, pan=0, at=0.1, rel=0.5, out=0;
 	var sen, paneo, env;
 
-	sen=WhiteNoise.ar(amp);
-	paneo=Pan2.ar(sen, pan);
-	env=EnvGen.kr(Env.perc(at,rel),doneAction:2);
-	Out.ar(out, paneo*env);
+	sen = WhiteNoise.ar(amp);
+	paneo = Pan2.ar(sen, pan);
+	env = EnvGen.kr(Env.perc(at, rel),doneAction:2);
+	Out.ar(out, paneo * env);
+}).add
+);
+
+// reverb
+(
+SynthDef(\rev2, {arg mix=0.3, room=0.73, damp=0.9, amp=1, gate=1, out=0;
+	var sen, env;
+
+	sen = FreeVerb.ar(InFeedback.ar(11, 2), mix, room, damp, amp);
+	env = EnvGen.kr(Env.asr(0.01, 1, 0.1), gate, doneAction: 0);
+	Out.ar(out, sen * env);
 }).add
 );
 )
+
+
 

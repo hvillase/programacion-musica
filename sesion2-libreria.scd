@@ -64,7 +64,7 @@ SynthDef(\wn, {arg amp=0.3, pan=0, at=0.1, rel=0.5, out=0;
 
 // reverb
 (
-SynthDef(\rev2, {arg mix=0.3, room=0.73, damp=0.9, amp=1, gate=1, out=0;
+SynthDef(\reverb, {arg mix=0.3, room=0.73, damp=0.9, amp=1, gate=1, out=0;
 	var sen, env;
 
 	sen = FreeVerb.ar(InFeedback.ar(11, 2), mix, room, damp, amp);

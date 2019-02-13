@@ -8,4 +8,4 @@ SuperCollider, SynthDef, Pdef.
 SuperCollider, librería de sintes y patrones. Para usar el reverb cambia el argumento \out del SynthDef que quieras ponerselo a un valor de 11; antes prende el reverb con al línea Synth(\reverb).
 
 ### Sesión 3:
-
+Introducción a Pure Data. Menú put o poner y Hola Mundo.

@@ -9,3 +9,7 @@ SuperCollider, librería de sintes y patrones. Para usar el reverb cambia el arg
 
 ### Sesión 3:
 Introducción a Pure Data. Menú put o poner y Hola Mundo.
+
+### Sesión 4:
+Pure Data: envolventes y contador
+SuperCollider: Patterns y efectos

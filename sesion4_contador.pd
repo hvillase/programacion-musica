@@ -1,0 +1,37 @@
+#N canvas 240 192 1398 713 10;
+#X floatatom 462 245 10 0 0 0 - - -;
+#X obj 462 271 / 60;
+#X floatatom 462 306 5 0 0 0 - - -;
+#X obj 392 128 metro 1000;
+#X obj 392 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 462 205 float;
+#X obj 518 209 + 1;
+#X obj 462 339 int;
+#X floatatom 462 368 5 0 0 0 - - -;
+#X floatatom 515 369 5 0 0 0 - - -;
+#X obj 586 295 % 60;
+#X msg 462 161 0;
+#X obj 392 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 419 96 prende/apaga contador;
+#X text 492 160 presionar para regresar valores a cero;
+#X text 448 392 minutos;
+#X text 513 393 segundos;
+#X text 623 294 modulo;
+#X text 398 273 división;
+#X text 547 209 iteración;
+#X connect 0 0 1 0;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 1;
+#X connect 7 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 5 0;
+#X connect 11 0 6 0;
+#X connect 12 0 3 0;

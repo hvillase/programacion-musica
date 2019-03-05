@@ -13,3 +13,9 @@ Introducción a Pure Data. Menú put o poner y Hola Mundo.
 ### Sesión 4:
 Pure Data: envolventes y contador
 SuperCollider: Patterns y efectos
+
+### Sesión 5
+Pure Data: patch para ller sonido y visualización de onda.
+SuperCollider: SynthDef para leer sonido.
+
+### Sesión 6

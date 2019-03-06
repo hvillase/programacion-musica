@@ -15,7 +15,9 @@ Pure Data: envolventes y contador
 SuperCollider: Patterns y efectos
 
 ### Sesión 5
-Pure Data: patch para ller sonido y visualización de onda.
+Pure Data: patch para leer sonido y visualización de onda.
 SuperCollider: SynthDef para leer sonido.
 
 ### Sesión 6
+Pure Data: patch para grabar voz y medidor de señal de entrada y salida.
+SuperCollider: grabación de sonido interno

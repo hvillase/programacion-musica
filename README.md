@@ -21,3 +21,7 @@ SuperCollider: SynthDef para leer sonido.
 ### Sesión 6
 Pure Data: patch para grabar voz y medidor de señal de entrada y salida.
 SuperCollider: grabación de sonido interno
+
+### Sesión 7
+PureData: patches para enviar y recibir mensajes osc desde y hacia SuperCollider.
+SuperCollider: código para enviar y recibir mensajes osc desde y hacia Pure Data.

@@ -1,0 +1,33 @@
+#N canvas 314 89 1298 895 10;
+#X floatatom 73 73 5 200 1500 0 - - -;
+#X obj 73 135 list prepend send;
+#X obj 73 168 list trim;
+#X obj 175 306 netsend -u -b;
+#X obj 175 345 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 205 268 disconnect;
+#X text 65 35 Patch para enviar datos a SuperCollider;
+#X text 328 207 1 Presionar mensaje para conectarme a SuperCollider
+;
+#X text 330 236 2 Ir a SuperCollider y declarar el OSCdef;
+#X text 275 268 3 Al finalizar presionar para desconectarme;
+#X text 197 343 <- Este toggle indica que estamos conectados cuando
+hay X;
+#X text 109 72 <- Mover esta caja numérica para enviar valores;
+#X obj 73 102 oscformat /frec;
+#X floatatom 451 71 5 0 1 0 - - -;
+#X obj 451 100 oscformat /amp;
+#X msg 324 22 440;
+#X msg 376 26 880;
+#X msg 175 209 connect localhost 57120;
+#X connect 0 0 12 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
+#X connect 15 0 12 0;
+#X connect 16 0 12 0;
+#X connect 17 0 3 0;

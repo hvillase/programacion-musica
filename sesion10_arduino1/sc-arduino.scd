@@ -2,7 +2,7 @@
 // Adaptado del tutorial 19 de Eli Fieldsteel
 // 2 botones, dos potenciometros
 
-SerialPort.devices; // nos muestra los puertos disponibles
+SerialPort.listDevices; // nos muestra los puertos disponibles
 
 // 1 activar comunicación con puerto serial
 ~puerto = SerialPort.new("/dev/ttyUSB0", 9600); // puerto de comunicación serial, velocidad de comunicación

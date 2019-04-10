@@ -28,3 +28,6 @@ SuperCollider: código para enviar y recibir mensajes osc desde y hacia Pure Dat
 
 ### Sesion 10
 Arduino 1: Reconocimiento del hardware y software de Arduino. Tres Sketch: 1) Hola Mundo: prendido y apagado de un led. 2) Prendido y apagado de un led mediante botón pulsador y 3) Control de velocidad de prendido y apagado dled mediante potenciometro.
+
+### Sesion 11
+Arduino 2: Conexión de Arduino y SuperCollider. Envío de datos de Arduino a SuperCollider. Conexión de potenciometros y botones. Instalación del Quark ArduinoQuaternion en SuperCollider.

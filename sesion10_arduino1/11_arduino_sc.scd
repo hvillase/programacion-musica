@@ -1,6 +1,8 @@
+// 1 ver puertos
 SerialPort.listDevices
 
-~arduino = ArduinoSMS( "/dev/ttyUSB0", 115200);
+// 2 activar conexion arduino
+~arduino = ArduinoSMS("/dev/ttyUSB0", 115200);
 
 (
 ~arduino.action = {|... msg|
@@ -18,7 +20,7 @@ SerialPort.listDevices
 };
 );
 
-~arduino.close;
+~arduino.close; //
 
 (
 ~control = Routine{
@@ -30,16 +32,16 @@ SerialPort.listDevices
 
 	loop{
 
-        ~analog1.postln;
-        ~analog2.postln;
-		~analog3.postln;
-		~analog4.postln;
+		~sinte.set(\frec, ~analog1.linlin(0,1023, 300,600));
+		~sinte.set(\amp, ~analog2.linlin(0, 1023,0.0,1.0));
+		~analog3;
+		~analog4;
 
            if(~digital1 != digitalAnt1,
            {
            if (~digital1 == 0, {cambio1 = cambio1 +1});
-           /*~sinte.set(\puerta, (cambio1 %2).postln);*/
-		   (cambio1 %2).postln;
+           ~sinte.set(\puerta, (cambio1 %2).postln);
+		   //(cambio1 %2).postln;
            }
            );
 
@@ -81,3 +83,19 @@ SerialPort.listDevices
 );
 
 ~control.stop;
+
+// usar valores
+s.boot;
+(
+SynthDef(\arduino,{
+	arg frec=80, amp=0.5, paneo=0, puerta=1, salida=0;
+	var sen, pan, env;
+	sen = Saw.ar(frec, amp);
+	pan = Pan2.ar(sen, paneo);
+	env = EnvGen.kr(Env.asr(0.2, 1, 0.2), puerta, doneAction:0);
+	Out.ar(salida, pan * env);
+}).add
+)
+
+~sinte = Synth(\arduino)
+~sinte.set(\puerta, 0)

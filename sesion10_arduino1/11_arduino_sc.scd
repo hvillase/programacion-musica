@@ -1,7 +1,15 @@
+//=======================================
+// SuperCollider recibe datos de arduino
+// 4 análogos, 5 digitales
+// Instalar Quark: ArduinoQuaternion
+//=======================================
+
 // 1 ver puertos
 SerialPort.listDevices
 
-// 2 activar conexion arduino
+// 2 activar conexión Arduino
+// cambia el puerto "/dev/ttyUSB0" por el que te saló en la lista anterior
+
 ~arduino = ArduinoSMS("/dev/ttyUSB0", 115200);
 
 (
@@ -20,11 +28,9 @@ SerialPort.listDevices
 };
 );
 
-~arduino.close; //
-
 (
 ~control = Routine{
-	var digitalAnt1, cambio1=0;
+	var digitalAnt1, cambio1=0; // hacemos una comparación de estado prendido/apagado para entradas digitles o botones
 	var digitalAnt2, cambio2=0;
 	var digitalAnt3, cambio3=0;
 	var digitalAnt4, cambio4=0;
@@ -82,20 +88,24 @@ SerialPort.listDevices
            0.01.yield;}}.play;
 );
 
-~control.stop;
-
-// usar valores
+// usar valores en un SynthDef
 s.boot;
 (
 SynthDef(\arduino,{
-	arg frec=80, amp=0.5, paneo=0, puerta=1, salida=0;
+	arg frec = 80, am = 0.5, paneo = 0, puerta = 1, salida = 0;
 	var sen, pan, env;
 	sen = Saw.ar(frec, amp);
 	pan = Pan2.ar(sen, paneo);
-	env = EnvGen.kr(Env.asr(0.2, 1, 0.2), puerta, doneAction:0);
+	env = EnvGen.kr(Env.asr(0.2, 1, 0.2), puerta, doneAction:0); // doneAction en 0 para poder prender/apagar con botón
 	Out.ar(salida, pan * env);
 }).add
 )
 
-~sinte = Synth(\arduino)
-~sinte.set(\puerta, 0)
+~sinte = Synth(\arduino);
+~sinte.set(\puerta, 0);
+
+// Para finalizar ==============================
+
+~control.stop; // apagar rutina
+~arduino.close; // CERRAR PUERTO !!
+

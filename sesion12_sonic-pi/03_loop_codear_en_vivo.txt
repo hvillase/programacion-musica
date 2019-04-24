@@ -1,0 +1,9 @@
+# loop para live coding con aleatoridad
+live_loop :loop1 do
+  with_fx :echo, phase: 0.5, decay: 5 do
+    play choose([62,64,65]), amp: 0.5
+    sleep 0.5
+    play rrand_i(60,72), pan: 0.5, attack: 0.01
+    sleep 0.5
+  end
+end

@@ -1,0 +1,12 @@
+# sonic pi dos loops encadenados, sample con envolvente
+in_thread do
+  loop do
+    sample :ambi_choir, attack: 0.1, sustain: 0.1, release: 0.1
+    sleep 1
+  end
+end
+
+loop do
+  sample :bd_ada, amp: 0.9
+  sleep 0.5
+end

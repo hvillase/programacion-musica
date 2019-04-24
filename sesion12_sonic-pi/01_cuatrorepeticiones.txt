@@ -1,0 +1,11 @@
+#sonic pi cuatro repeticiones
+4.times do
+  use_synth :chipbass
+  play 60, amp: 0.3
+  sleep 0.5
+  use_synth :blade
+  play 62, amp: 0.2, pan: 0.5
+  sleep 0.5
+  play :Gb3
+  sleep 0.25
+end

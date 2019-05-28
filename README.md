@@ -39,3 +39,19 @@ Hydra: revisón de la aplicación en línea.
 ### Sesión 13
 TidalCycles
 Instalación
+
+### Sesión 14
+Realización de proyectos
+
+### Sesión 15
+Realización de proyectos
+
+### Sesión 16
+Realización de proyectos
+
+### Sesión 17
+Revisión de proyectos
+
+### Sesión 18
+Muestra de proyectos 4 de junio 2019, 17:30 hora de Ciudad de México en https://youtu.be/kX7Auc-BZ_Q
+
